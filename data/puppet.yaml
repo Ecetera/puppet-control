@@ -1,0 +1,12 @@
+---
+role:
+  - role::puppetserver
+
+puppetdb::database: 'embedded'
+#puppetdb::master::config::puppet_service_name: 'httpd'
+puppetdb::master::config::manage_report_processor: true
+puppetdb::master::config::enable_reports: true
+
+# managed with puppetlabs-git now
+#puppetboard::manage_git: true
+puppetboard::manage_virtualenv: true

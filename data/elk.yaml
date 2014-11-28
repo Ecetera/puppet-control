@@ -1,0 +1,35 @@
+---
+role:
+  - role::elk
+
+elasticsearch::manage_repo: true
+elasticsearch::repo_version: '1.0'
+elasticsearch::purge_configdir: true
+elasticsearch::config:
+  cluster:
+    name: 'logstash'
+  discovery:
+    ping:
+      zen:
+        multicast:
+          enabled: false
+        unicast:
+          hosts: '127.0.0.1:9301'
+  node:
+    name: 'elk'
+  path:
+    conf: '/etc/elasticsearch'
+    data: '/var/lib/elasticsearch'
+    logs: '/var/log/elasticsearch'
+  bootstrap:
+    mlockall: true
+
+logstash::manage_repo: true
+logstash::repo_version: '1.4'
+
+kibana::webserver: 'apache'
+kibana::virtualhost: 'elk.spotlight.pride-craft.com'
+
+curator::ensure: 'installed'
+curator::provider: 'pip'
+curator::manage_pip: true
