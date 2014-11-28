@@ -1,6 +1,5 @@
 class profile::base {
   class { '::ntp': }
-  class { '::users': }
 }
 class profile::puppetdb {
   class { '::puppetdb': }
