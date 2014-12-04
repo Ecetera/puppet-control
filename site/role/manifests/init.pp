@@ -6,6 +6,7 @@ class role::puppetserver inherits role {
   include profile::puppetdb
   include profile::apache::wsgi
   include profile::puppetboard
+  include profile::jenkins
 }
 class role::elk inherits role {
   include profile::elasticsearch
