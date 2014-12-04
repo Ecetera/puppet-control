@@ -10,3 +10,5 @@ puppetdb::master::config::enable_reports: true
 # managed with puppetlabs-git now
 #puppetboard::manage_git: true
 puppetboard::manage_virtualenv: true
+
+jenkins::configure_firewall: false
