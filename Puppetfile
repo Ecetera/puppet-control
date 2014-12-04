@@ -23,6 +23,9 @@ mod 'logstashforwarder',
 # R10K
 mod 'zack/r10k', '2.3.1'
 
+# Jenkins
+mod 'rtyler/jenkins', '1.3.0'
+
 # Module Dependencies
 mod 'example42/puppi', '2.1.10'
 mod 'gentoo/portage', '2.2.0'
@@ -39,4 +42,6 @@ mod 'puppetlabs/postgresql', '4.0.0'
 mod 'puppetlabs/ruby', '0.3.0'
 mod 'puppetlabs/stdlib', '4.3.2'
 mod 'puppetlabs/vcsrepo', '1.1.0'
+mod 'puppetlabs/java', '1.2.0'
+mod 'darin/zypprepo', '1.0.1'
 mod 'stankevich/python', '1.7.10'
