@@ -14,6 +14,9 @@ class profile::apache::wsgi inherits profile::apache {
 class profile::java {
   class { '::jdk_oracle': }
 }
+class profile::jenkins {
+  class { '::jenkins': }
+}
 class profile::mysql::server {
   class { '::mysql::server': }
   class { '::mysql::server::account_security': }
