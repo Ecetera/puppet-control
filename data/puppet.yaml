@@ -12,3 +12,5 @@ puppetdb::master::config::enable_reports: true
 puppetboard::manage_virtualenv: true
 
 jenkins::configure_firewall: false
+jenkins::config_hash:
+  HTTP_PORT: '9090'
