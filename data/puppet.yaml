@@ -13,4 +13,5 @@ puppetboard::manage_virtualenv: true
 
 jenkins::configure_firewall: false
 jenkins::config_hash:
-  HTTP_PORT: '9090'
+  HTTP_PORT:
+    value: '9090'
