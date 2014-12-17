@@ -15,6 +15,6 @@ logstashforwarder::servers:
 logstashforwarder::ssl_ca: 'puppet:///modules/profile/logstash/ssl.crt'
 logstashforwarder::ssl_key: ''
 logstashforwarder::ssl_cert: ''
-logstashforwarder::init_template: 'puppet:///modules/profile/logstashforwarder/logstashforwarder.RedHat.erb'
+logstashforwarder::init_template: 'profile/logstashforwarder.RedHat.init.erb'
 logstashforwarder::init_defaults:
   LOGSTASH_FORWARDER_OPTIONS: '"-config /etc/logstashforwarder/config.json"'
