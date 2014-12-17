@@ -4,17 +4,17 @@ role:
   - role
 
 ntp::servers:
-  - 'ntp1.pridecraft-corp.com'
-  - 'ntp2.pridecraft-corp.com'
+  - '0.pool.ntp.org'
+  - '1.pool.ntp.org'
 
 jdk_oracle::version: '7'
 
 logstashforwarder::manage_repo: true
 logstashforwarder::servers:
-  - '10.252.0.149:9000'
+  - '10.0.0.10:9000'
 logstashforwarder::ssl_ca: 'puppet:///modules/profile/logstash/ssl.crt'
 logstashforwarder::ssl_key: ''
 logstashforwarder::ssl_cert: ''
-logstashforwarder::init_template: 'logstashforwarder/etc/init.d/logstashforwarder.RedHat.erb'
+logstashforwarder::init_template: 'puppet:///modules/profile/logstashforwarder/logstashforwarder.RedHat.erb'
 logstashforwarder::init_defaults:
   LOGSTASH_FORWARDER_OPTIONS: '"-config /etc/logstashforwarder/config.json"'
