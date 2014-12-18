@@ -33,18 +33,10 @@ class profile::puppetboard {
 }
 class profile::elasticsearch {
   class { '::elasticsearch': }
-  elasticsearch::instance { 'es-01': }
-  elasticsearch::plugin { 'lmenezes/elasticsearch-kopf':
-    module_dir => 'kopf',
-    instances  => 'es-01',
-  }
   class { '::curator': }
-  curator::job { 'elasticsearch_cleanup':
-    delete_older   => 90, 
-    close_older    => 30, 
-    optimize_older => 2,
-    bloom_older    => 2, }
-    # timeout        => 3600, } Not yet in the module
+  create_resources(elasticsearch::instance, hiera('es_instances'))
+  create_resources(elasticsearch::plugin, hiera('es_plugins'))
+  create_resources(curator::job, hiera('curator_jobs'))
 }
 class profile::logstash {
   class { '::logstash': }
