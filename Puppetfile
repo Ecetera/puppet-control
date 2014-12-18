@@ -28,6 +28,7 @@ mod 'rtyler/jenkins', '1.3.0'
 
 # RabbitMQ
 mod 'puppetlabs/rabbitmq', '4.1.0'
+mod 'nanliu/staging', '1.0.2'
 
 # Module Dependencies
 mod 'example42/puppi', '2.1.10'
