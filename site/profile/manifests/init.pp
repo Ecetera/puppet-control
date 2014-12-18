@@ -50,7 +50,7 @@ class profile::logstash {
     source => 'puppet:///modules/profile/logstash/ssl.key', }
 }
 class profile::kibana {
-  class {'::kibana': }
+  class { '::kibana': }
 }
 class profile::logstashforwarder {
   class { '::logstashforwarder': }
@@ -58,4 +58,7 @@ class profile::logstashforwarder {
     paths  => [ '/var/log/messages' ],
     fields => { 'type' => 'syslog' },
   }
+}
+class profile::rabbitmq {
+  class { '::rabbitmq': }
 }
