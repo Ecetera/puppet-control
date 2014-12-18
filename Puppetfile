@@ -26,6 +26,9 @@ mod 'zack/r10k', '2.3.1'
 # Jenkins
 mod 'rtyler/jenkins', '1.3.0'
 
+# RabbitMQ
+mod 'puppetlabs/rabbitmq', '4.1.0'
+
 # Module Dependencies
 mod 'example42/puppi', '2.1.10'
 mod 'gentoo/portage', '2.2.0'
