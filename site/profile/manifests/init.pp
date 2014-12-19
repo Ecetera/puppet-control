@@ -59,9 +59,6 @@ class profile::logstashforwarder {
     fields => { 'type' => 'syslog' },
   }
 }
-class profile::rabbitmq {
-  class { '::rabbitmq': }
-}
 class profile::sensu::server {
   class { '::sensu': }
   class { '::rabbitmq': }
