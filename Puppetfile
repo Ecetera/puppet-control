@@ -33,6 +33,11 @@ mod 'nanliu/staging', '1.0.2'
 # Sensu
 mod 'sensu/sensu', '1.3.1'
 mod 'maestrodev/wget', '1.5.6'
+mod 'yelp/uchiwa', '0.3.0'
+
+# MCollective
+mod 'puppetlabs/mcollective', '2.0.0'
+mod 'richardc/datacat', '0.6.1'
 
 # Module Dependencies
 mod 'example42/puppi', '2.1.10'
