@@ -30,6 +30,10 @@ mod 'rtyler/jenkins', '1.3.0'
 mod 'puppetlabs/rabbitmq', '4.1.0'
 mod 'nanliu/staging', '1.0.2'
 
+# Sensu
+mod 'sensu/sensu', '1.3.1'
+mod 'maestrodev/wget', '1.5.6'
+
 # Module Dependencies
 mod 'example42/puppi', '2.1.10'
 mod 'gentoo/portage', '2.2.0'

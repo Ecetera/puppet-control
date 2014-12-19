@@ -62,3 +62,16 @@ class profile::logstashforwarder {
 class profile::rabbitmq {
   class { '::rabbitmq': }
 }
+class profile::sensu::server {
+  class { '::sensu': }
+  class { '::rabbitmq': }
+  rabbitmq_vhost { '/sensu':
+    ensure => present, }
+  rabbitmq_user { 'sensu':
+    admin    => true,
+    password => '', }
+  rabbitmq_user_permissions { 'sensu@/sensu':
+    configure_permission => '.*',
+    read_permission      => '.*',
+    write_permission     => '.*', }
+}
