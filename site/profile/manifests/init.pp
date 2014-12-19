@@ -69,7 +69,7 @@ class profile::rabbit {
     ensure => present, }
   rabbitmq_user { 'sensu':
     admin    => true,
-    password => '', }
+    password => 'sensu', }
   rabbitmq_user_permissions { 'sensu@/sensu':
     configure_permission => '.*',
     read_permission      => '.*',
