@@ -35,7 +35,7 @@ mod 'sensu/sensu', '1.3.1'
 mod 'maestrodev/wget', '1.5.6'
 mod 'uchiwa',
   :git => 'https://github.com/Yelp/puppet-uchiwa.git',
-  :tag => '0.3.0'
+  :commit => '24cf4d30ce5f41224341640952509547a6dc45fa'
 
 # MCollective
 mod 'puppetlabs/mcollective', '2.0.0'
