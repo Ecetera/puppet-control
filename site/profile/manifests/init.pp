@@ -1,5 +1,6 @@
 class profile::base {
   class { '::ntp': }
+  class { '::sensu': }
 }
 class profile::puppetdb {
   class { '::puppetdb': }
@@ -59,8 +60,7 @@ class profile::logstashforwarder {
     fields => { 'type' => 'syslog' },
   }
 }
-class profile::sensu::server {
-  class { '::sensu': }
+class profile::rabbit {
   class { '::rabbitmq': }
   class { '::uchiwa': }
   package { 'redis': ensure => installed }
