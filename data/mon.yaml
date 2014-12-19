@@ -3,3 +3,4 @@ role:
   - role::mon
 
 sensu::server: true
+uchiwa::install_repo: false
