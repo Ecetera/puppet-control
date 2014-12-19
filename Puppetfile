@@ -33,7 +33,9 @@ mod 'nanliu/staging', '1.0.2'
 # Sensu
 mod 'sensu/sensu', '1.3.1'
 mod 'maestrodev/wget', '1.5.6'
-mod 'yelp/uchiwa', '0.3.0'
+mod 'uchiwa',
+  :git => 'https://github.com/Yelp/puppet-uchiwa.git',
+  :tag => '0.3.0'
 
 # MCollective
 mod 'puppetlabs/mcollective', '2.0.0'
