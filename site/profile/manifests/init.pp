@@ -62,6 +62,9 @@ class profile::logstashforwarder {
 class profile::sensu::server {
   class { '::sensu': }
   class { '::rabbitmq': }
+  class { '::uchiwa': }
+  package { 'redis': ensure => installed }
+  service { 'redis': ensure => running }
   rabbitmq_vhost { '/sensu':
     ensure => present, }
   rabbitmq_user { 'sensu':

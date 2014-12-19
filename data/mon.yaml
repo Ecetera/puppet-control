@@ -1,3 +1,5 @@
 ---
 role:
   - role::mon
+
+sensu::server: true
