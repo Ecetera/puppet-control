@@ -21,5 +21,4 @@ logstashforwarder::init_defaults:
 
 sensu::purge_config: true
 sensu::rabbitmq_host: 10.0.0.12
-sensu::rabbitmq_password: ''
-sensu::rabbitmq_port: 5672
+sensu::subscriptions: 'all'
