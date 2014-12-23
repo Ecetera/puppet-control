@@ -34,7 +34,7 @@ logstash::manage_repo: true
 logstash::repo_version: '1.4'
 
 kibana::webserver: 'apache'
-kibana::virtualhost: 'elk.spotlight.pride-craft.com'
+kibana::virtualhost: 'elk.boxnet'
 
 curator::ensure: 'installed'
 curator::provider: 'pip'
