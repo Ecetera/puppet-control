@@ -79,7 +79,6 @@ class profile::sensu::server {
     write_permission     => '.*', }
 }
 class profile::mco::client {
-  class { '::mcollective': }
   rabbitmq_vhost { '/mcollective':
     esnure => present, }
   rabbitmq_user { 'mcollective':
@@ -89,5 +88,4 @@ class profile::mco::client {
     configure_permission => '.*',
     read_permission      => '.*',
     write_permission     => '.*', }
-
 }
