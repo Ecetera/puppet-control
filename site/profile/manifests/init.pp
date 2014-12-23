@@ -63,6 +63,8 @@ class profile::logstashforwarder {
 }
 class profile::rabbit {
   class { '::rabbitmq': }
+  rabbitmq_plugin { 'rabbitmq_stomp':
+    ensure => present, }
   package { 'redis': ensure => installed }
   service { 'redis': ensure => running }
 }
