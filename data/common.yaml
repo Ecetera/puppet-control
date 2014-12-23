@@ -27,4 +27,5 @@ sensu::rabbitmq_password: 'sensu'
 sensu::subscriptions: 'all'
 
 mcollective::connector: 'rabbitmq'
-mcollective::middleware_hosts: '10.0.0.12'
+mcollective::middleware_hosts:
+  - '10.0.0.12'
