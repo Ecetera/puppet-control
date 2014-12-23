@@ -90,4 +90,16 @@ class profile::mco::client {
     configure_permission => '.*',
     read_permission      => '.*',
     write_permission     => '.*', }
+  rabbitmq_user_permissions { 'admin@/mcollective':
+    configure_permission => '.*', }
+  rabbitmq_exchange { 'mcollective_broadcast@/mcollective':
+    ensure   => present,
+    type     => 'topic',
+    user     => 'admin',
+    password => 'admin', }
+  rabbitmq_exchange { 'mcollective_directed@/mcollective':
+    ensure   => present,
+    type     => 'direct',
+    user     => 'admin',
+    password => 'admin', }
 }
