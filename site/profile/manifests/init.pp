@@ -1,6 +1,7 @@
 class profile::base {
   class { '::ntp': }
   class { '::sensu': }
+  class { '::mcollective': }
 }
 class profile::puppetdb {
   class { '::puppetdb': }
@@ -62,9 +63,11 @@ class profile::logstashforwarder {
 }
 class profile::rabbit {
   class { '::rabbitmq': }
-  class { '::uchiwa': }
   package { 'redis': ensure => installed }
   service { 'redis': ensure => running }
+}
+class profile::sensu::server {
+  class { '::uchiwa': }
   rabbitmq_vhost { '/sensu':
     ensure => present, }
   rabbitmq_user { 'sensu':
@@ -74,4 +77,17 @@ class profile::rabbit {
     configure_permission => '.*',
     read_permission      => '.*',
     write_permission     => '.*', }
+}
+class profile::mco::client {
+  class { '::mcollective': }
+  rabbitmq_vhost { '/mcollective':
+    esnure => present, }
+  rabbitmq_user { 'mcollective':
+    admin    => false,
+    password => 'marionette', }
+  rabbitmq_user_permissions { 'mcollective@/mcollective':
+    configure_permission => '.*',
+    read_permission      => '.*',
+    write_permission     => '.*', }
+
 }

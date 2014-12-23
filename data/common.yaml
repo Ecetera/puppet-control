@@ -20,8 +20,11 @@ logstashforwarder::init_defaults:
   LOGSTASH_FORWARDER_OPTIONS: '"-config /etc/logstashforwarder/config.json"'
 
 sensu::purge_config: true
-sensu::rabbitmq_host: 10.0.0.12
+sensu::rabbitmq_host: '10.0.0.12'
 sensu::rabbitmq_vhost: '/sensu'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'sensu'
 sensu::subscriptions: 'all'
+
+mcollective::connector: 'rabbitmq'
+mcollective::middleware_hosts: '10.0.0.12'
