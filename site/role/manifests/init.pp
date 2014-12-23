@@ -14,6 +14,8 @@ class role::elk inherits role {
 }
 class role::mon inherits role {
   include profile::rabbit
+  include profile::sensu::server
+  include profile::mco::client
 }
 class role::jenkins inherits role {
   include profile::jenkins
