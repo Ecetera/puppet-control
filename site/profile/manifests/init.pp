@@ -80,7 +80,7 @@ class profile::sensu::server {
 }
 class profile::mco::client {
   rabbitmq_vhost { '/mcollective':
-    esnure => present, }
+    ensure => present, }
   rabbitmq_user { 'mcollective':
     admin    => false,
     password => 'marionette', }
