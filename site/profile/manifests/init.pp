@@ -67,6 +67,10 @@ class profile::rabbit {
     ensure => present, }
   package { 'redis': ensure => installed }
   service { 'redis': ensure => running }
+  rabbitmq_user { 'admin':
+    ensure   => present,
+    admin    => true,
+    password => 'admin', }
 }
 class profile::sensu::server {
   class { '::uchiwa': }
