@@ -7,3 +7,7 @@ sensu::api: true
 uchiwa::install_repo: false
 
 mcollective::client: true
+
+rabbitmq::config_stomp: true
+rabbitmq::stomp_port: 61613
+rabbitmq::ssl_stomp_port: 61614
