@@ -54,6 +54,8 @@ class profile::logstash {
 class profile::kibana {
   class { '::kibana': }
   Apache::Vhost { port => '80', }
+  file { '/opt/kibana/app/dashboards/default.json':
+    source => 'puppet:///modules/profile/kibana/logstash.json', }
 }
 class profile::logstashforwarder {
   class { '::logstashforwarder': }
