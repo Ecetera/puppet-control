@@ -33,6 +33,7 @@ es_plugins:
 logstash::manage_repo: true
 logstash::repo_version: '1.4'
 
+apache::default_vhost: false
 kibana::webserver: 'apache'
 kibana::virtualhost: 'elk.boxnet'
 
