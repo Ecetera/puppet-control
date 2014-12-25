@@ -53,6 +53,7 @@ class profile::logstash {
 }
 class profile::kibana {
   class { '::kibana': }
+  Apache::Vhost { port => '80', }
 }
 class profile::logstashforwarder {
   class { '::logstashforwarder': }
