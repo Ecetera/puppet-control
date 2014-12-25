@@ -11,7 +11,7 @@ jdk_oracle::version: '7'
 
 logstashforwarder::manage_repo: true
 logstashforwarder::servers:
-  - '10.0.0.10:9000'
+  - '10.1.1.10:9000'
 logstashforwarder::ssl_ca: 'puppet:///modules/profile/logstash/ssl.crt'
 logstashforwarder::ssl_key: ''
 logstashforwarder::ssl_cert: ''
@@ -20,7 +20,7 @@ logstashforwarder::init_defaults:
   LOGSTASH_FORWARDER_OPTIONS: '"-config /etc/logstashforwarder/config.json"'
 
 sensu::purge_config: true
-sensu::rabbitmq_host: '10.0.0.12'
+sensu::rabbitmq_host: '10.1.1.12'
 sensu::rabbitmq_vhost: '/sensu'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'sensu'
@@ -28,4 +28,4 @@ sensu::subscriptions: 'all'
 
 mcollective::connector: 'rabbitmq'
 mcollective::middleware_hosts:
-  - '10.0.0.12'
+  - '10.1.1.12'
