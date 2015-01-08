@@ -7,9 +7,10 @@ puppetdb::database: 'embedded'
 puppetdb::master::config::manage_report_processor: true
 puppetdb::master::config::enable_reports: true
 
-# managed with puppetlabs-git now
-#puppetboard::manage_git: true
+apache::default::vhost: false
+#puppetboard::manage_git: true # managed with puppetlabs-git now
 puppetboard::manage_virtualenv: true
+puppetboard::apache::vhost: 'puppet.boxnet'
 
 jenkins::configure_firewall: false
 jenkins::config_hash:
