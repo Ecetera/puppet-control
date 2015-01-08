@@ -28,7 +28,7 @@ class profile::mysql::client {
 }
 class profile::puppetboard {
   class { '::puppetboard': }
-  class { '::puppetboard::apache::conf': }
+  class { '::puppetboard::apache::vhost': }
   # A temporary hack needed for puppetboard
   file { '/etc/httpd/conf.d/puppetboard_wsgi.conf':
     content => 'WSGISocketPrefix ../../var/run/wsgi', }
