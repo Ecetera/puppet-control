@@ -32,6 +32,7 @@ sensu::rabbitmq_vhost: '/sensu'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'sensu'
 sensu::subscriptions: 'all'
+sensu::client_address: %{::ipaddress_eth1}
 
 mcollective::connector: 'rabbitmq'
 mcollective::middleware_hosts:
