@@ -1,31 +1,21 @@
-class profile::base {
-  class { '::ntp': }
-  class { '::sensu': }
-  class { '::mcollective': }
-}
+class profile::ntp { class { '::ntp': } }
+class profile::sensu { class { '::sensu': } }
+class profile::mcollective { class { '::mcollective': } }
 class profile::puppetdb {
   class { '::puppetdb': }
   class { '::puppetdb::master::config': }
 }
-class profile::apache {
-  class { '::apache': }
-}
+class profile::apache { class { '::apache': } }
 class profile::apache::wsgi inherits profile::apache {
   class { '::apache::mod::wsgi': }
 }
-class profile::java {
-  class { '::jdk_oracle': }
-}
-class profile::jenkins {
-  class { '::jenkins': }
-}
+class profile::java { class { '::jdk_oracle': } }
+class profile::jenkins { class { '::jenkins': } }
 class profile::mysql::server {
   class { '::mysql::server': }
   class { '::mysql::server::account_security': }
 }
-class profile::mysql::client {
-  class { '::mysql::client': }
-}
+class profile::mysql::client { class { '::mysql::client': } }
 class profile::puppetboard {
   class { '::puppetboard': }
   class { '::puppetboard::apache::vhost': }
@@ -59,10 +49,7 @@ class profile::kibana {
 }
 class profile::logstashforwarder {
   class { '::logstashforwarder': }
-  logstashforwarder::file { 'syslog':
-    paths  => [ '/var/log/messages' ],
-    fields => { 'type' => 'syslog' },
-  }
+  create_resources(logstashforwarder::file, hiera('logstashforwarder_files'))
 }
 class profile::rabbit {
   class { '::rabbitmq': }

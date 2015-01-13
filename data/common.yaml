@@ -19,6 +19,12 @@ logstashforwarder::init_template: 'profile/logstashforwarder.RedHat.init.erb'
 logstashforwarder::init_defaults:
   LOGSTASH_FORWARDER_OPTIONS: '"-config /etc/logstashforwarder/config.json"'
 
+logstashforwarder_files:
+  'syslog':
+    paths: '/var/log/messages'
+    fields:
+      type: 'syslog'
+
 sensu::purge_config: true
 sensu::rabbitmq_host: '10.1.1.12'
 sensu::rabbitmq_vhost: '/sensu'
