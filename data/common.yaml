@@ -11,7 +11,7 @@ jdk_oracle::version: '7'
 
 logstashforwarder::manage_repo: true
 logstashforwarder::servers:
-  - '10.1.1.10:9000'
+  - '10.1.1.11:9000'
 logstashforwarder::ssl_ca: 'puppet:///modules/profile/logstash/ssl.crt'
 logstashforwarder::ssl_key: ''
 logstashforwarder::ssl_cert: ''
