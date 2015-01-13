@@ -21,9 +21,10 @@ logstashforwarder::init_defaults:
 
 logstashforwarder_files:
   'syslog':
-    paths: '/var/log/messages'
+    paths:
+      - '/var/log/messages'
     fields:
-      - type: 'syslog'
+      type: 'syslog'
 
 sensu::purge_config: true
 sensu::rabbitmq_host: '10.1.1.12'
