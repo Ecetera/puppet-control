@@ -1,5 +1,7 @@
 class role {
-  include profile::base
+  include profile::ntp
+  include profile::sensu
+  include profile::mcollective
   include profile::logstashforwarder
 }
 class role::puppetserver inherits role {
