@@ -1,7 +1,7 @@
 # TODO
 
 node default {
-  heira_include('role')
+  hiera_include('role')
 }
 
 #node /puppet/ { include role::puppetserver }
