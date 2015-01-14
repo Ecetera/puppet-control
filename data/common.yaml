@@ -1,6 +1,5 @@
 ---
 role:
-  # Default role
   - role
 
 ntp::servers:
